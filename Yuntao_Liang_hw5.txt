@@ -1,0 +1,41 @@
+
+Note:
+    How to run this program:
+
+        the main method is in Data_Processor. If you want to get data from website, type in
+        parameter 'remote' or nothing. If you want to get data from local CSV file in the same directory,
+        type in parameter 'local'
+
+    	Because of request rating limitation, I set a time sleep inside the for loop, if you choose to
+    	get data from website, you need to wait for 2 - 3 minutes. I print some results while doing scraping to let
+    	users know the program is running
+
+1. What are the strengths of your data modeling format?
+   Strongly Object-Oriented-Structure, easy to add, access and update the object.
+   We can re-ordering or sorting the data we obtained by the specific field
+
+2.What are the weaknesses? (Does your data model support? Sorting the information?
+Re-ordering it? Only obtaining a certain subset of the information?)
+   Hard to obtain a certain subset of the information
+
+3. How do you store your data on disk?
+   Store the data into CSV file
+
+4. Let’s say you find another data source that relates to all 3 of your data sources
+(i.e. a data source that relates to your existing data). How would you extend your
+model to include this new data source? How would that change the interface?
+   If this data source is very simple, like a string or a number, we can just add a
+   new field to our exist class, and add a new method to find this data and new the class
+   plus this data. If this data is complex, we can create another class for this data. Then
+   add this new field to the exist class. We need to instantiate the new class, and use this
+   new object to instantiate the exist class.
+   To change the interface, we need to add extra expression in get_detail() method to extract
+   the data we need to add. Then add new expression in get_movie() method to get this data and
+   instantiate the object by this data.
+
+5. How would you add a new attribute to your data (i.e. imagine you had a lat/long column in a
+database. You might use that to access an API to get a city name. How would you add city name
+to your data?)
+   First add a new field called city to the old class and add a method called add_city().
+   For loop every city in each row and get the city. Finally get the object I've created and call
+   add_city() to add the city field to my class
